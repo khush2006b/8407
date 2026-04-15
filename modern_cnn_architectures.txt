@@ -1,0 +1,55 @@
+MODERN CNN ARCHITECTURES – DETAILED EXPLANATION
+
+1.  LeNet-5 (1998) Architecture: Input (32x32) → Conv (6 filters 5x5) →
+    Avg Pool → Conv (16 filters 5x5) → Avg Pool → Flatten → FC (120) →
+    FC (84) → Output (10)
+
+Key Ideas: - First practical CNN - Introduced convolution and pooling
+
+Limitations: - Shallow network - Used tanh instead of ReLU
+
+2.  AlexNet (2012) Architecture: Input (224x224) → Conv (96 filters
+    11x11) → ReLU → MaxPool → Conv (256 filters 5x5) → ReLU → MaxPool →
+    Conv (384) → Conv (384) → Conv (256) → MaxPool → FC (4096) →
+    FC (4096) → Output
+
+Key Ideas: - Introduced ReLU - Used dropout - First GPU-trained deep CNN
+
+Limitations: - Large filters inefficient - High parameter count (~60M)
+
+3.  VGG16 (2014) Architecture: Input → Conv 3x3 ×2 → Pool → Conv 3x3 ×2
+    → Pool → Conv 3x3 ×3 → Pool → Conv 3x3 ×3 → Pool → Conv 3x3 ×3 →
+    Pool → FC → FC → Output
+
+Key Ideas: - Uses only 3x3 filters - Deep but simple design
+
+Limitations: - Very large (~138M parameters) - Slow
+
+4.  ResNet-50 (2015) Core Idea: Output = F(x) + x
+
+Architecture: Input → Conv + Pool → Residual Blocks → Global Avg Pool →
+FC → Output
+
+Residual Block: x → Conv → ReLU → Conv → + x → ReLU
+
+Key Ideas: - Skip connections - Solves vanishing gradient - Enables very
+deep networks
+
+Limitations: - Complex architecture
+
+5.  Inception (GoogLeNet) Architecture: Parallel operations: 1x1 conv
+    3x3 conv 5x5 conv pooling → concatenate
+
+Key Ideas: - Multi-scale feature extraction - Uses 1x1 conv for
+dimension reduction
+
+6.  EfficientNet Key Idea: Scale depth + width + resolution together
+
+Benefits: - Better performance with fewer parameters
+
+EVOLUTION SUMMARY: LeNet → AlexNet → VGG → ResNet → Inception →
+EfficientNet
+
+KEY INSIGHTS: - Deeper networks need better gradient flow - Skip
+connections solve training issues - Smaller filters improve efficiency -
+Modern models focus on optimization, not just depth
